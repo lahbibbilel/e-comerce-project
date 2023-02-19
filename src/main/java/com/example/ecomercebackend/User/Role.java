@@ -1,6 +1,7 @@
-package com.example.ecomercebackend.User;
+package com.example.ecomercebackend.user;
 
 public enum Role {
-    USER,
-    ADMIN
+
+  USER,
+  ADMIN
 }
