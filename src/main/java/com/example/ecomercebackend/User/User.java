@@ -1,5 +1,4 @@
-package com.example.ecomercebackend.User;
-
+package com.example.ecomercebackend.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,50 +17,52 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "user")
+@Table(name = "_user")
 public class User implements UserDetails {
-@Id
-@GeneratedValue
-    private Integer Id;
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String password;
-    @Enumerated(EnumType.STRING)
-    private Role role;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority((role.name())));
-    }
+  @Id
+  @GeneratedValue
+  private Integer id;
+  private String firstname;
+  private String lastname;
+  private String email;
+  private String password;
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
+  @Enumerated(EnumType.STRING)
+  private Role role;
 
-    @Override
-    public String getUsername() {
-        return email;
-    }
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return List.of(new SimpleGrantedAuthority(role.name()));
+  }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
+  @Override
+  public String getPassword() {
+    return password;
+  }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+  @Override
+  public String getUsername() {
+    return email;
+  }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
+  }
 
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
+  @Override
+  public boolean isAccountNonLocked() {
+    return true;
+  }
+
+  @Override
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isEnabled() {
+    return true;
+  }
 }
