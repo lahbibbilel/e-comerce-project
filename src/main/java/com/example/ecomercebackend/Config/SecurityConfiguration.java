@@ -25,7 +25,10 @@ public class SecurityConfiguration {
         .disable()
         .authorizeHttpRequests()
             //les api qui nous a permis de connecter avec front
-        .requestMatchers("/api/v1/auth/**","/api/v1/demo-controller/**")
+        .requestMatchers("/api/v1/auth/**",
+                "/api/v1/demo-controller/**","/api/v1/auth/register",
+                "/users/**","/api/products/**","/api/orders/**","/api/produits/**",
+                "/clients/**","/api/messages/**","/Panier/**","/Payment")
         .permitAll()
         .anyRequest()
         .authenticated()
