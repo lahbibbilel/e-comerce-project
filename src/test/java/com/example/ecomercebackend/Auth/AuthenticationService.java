@@ -1,14 +1,16 @@
 package com.example.ecomercebackend.Auth;
-
-        import com.example.ecomercebackend.User.Role;
-        import com.example.ecomercebackend.User.User;
-        import com.example.ecomercebackend.Config.JwtService;
-        import com.example.ecomercebackend.Repository.UserRepository;
-        import lombok.RequiredArgsConstructor;
-        import org.springframework.security.authentication.AuthenticationManager;
-        import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-        import org.springframework.security.crypto.password.PasswordEncoder;
-        import org.springframework.stereotype.Service;
+import com.example.ecomercebackend.auth.AuthenticationRequest;
+import com.example.ecomercebackend.auth.AuthenticationResponse;
+import com.example.ecomercebackend.auth.RegisterRequest;
+import com.example.ecomercebackend.config.JwtService;
+import com.example.ecomercebackend.user.Role;
+import com.example.ecomercebackend.user.User;
+import com.example.ecomercebackend.user.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
